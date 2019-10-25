@@ -6,6 +6,8 @@ module('Acceptance | list rentals', function(hooks) {
   setupApplicationTest(hooks);
 
   test('should show rentals as the home page', async function (assert) {
+    await visit("/");
+    assert.equal(currentURL(), "/rentals", "should redirect automatically");
   });
 
   test('should link to information about the company.', async function (assert) {
