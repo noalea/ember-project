@@ -7,7 +7,9 @@
   </a>
   <div class="details">
     <h3>
-      {{rental.title}}
+      {{#link-to "rentals.show" rental class=rental.id}}
+        {{rental.title}}
+      {{/link-to}}
     </h3>
     <div class="detail owner">
       <span>
@@ -36,4 +38,5 @@
       {{rental.bedrooms}}
     </div>
   </div>
+  <LocationMap @location={{this.rental.city}} />
 </article>
